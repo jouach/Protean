@@ -1,0 +1,249 @@
+hr{
+	border: none;
+	border-top: 1px solid #CCC;
+}
+.fl_right{
+	float: right;
+}
+.fl_left{
+	float: left;
+}
+.protean_form_table{
+	width: 98%;
+	margin: 10px auto;
+	padding: 0;
+	border-spacing: 0;
+}
+.protean_form_table select{
+	margin: 0 10px 0 0;
+	float: left;
+}
+.protean_form_table th{
+	width: 10%;
+	text-align: right;
+}
+.protean_form_table th, .protean_form_table td{
+	padding: 5px;
+}
+.protean_preview{
+	font-size: .8em;
+	width: 210px;
+	float: right;
+	border: 1px solid #333;
+	padding: 5px 5px 0;
+	text-align: center;
+	line-height: 1.4em;
+}
+.protean_preview_left{
+	width: 50px;
+	float: left;
+	padding: 5px;
+	margin: 0 0 5px 0;
+	clear: left;
+}
+.protean_preview_right{
+	width: 135px;
+	float: right;
+	padding: 5px;
+	margin: 0 0 5px 0;
+	clear: right;
+}
+.protean_preview_banner{
+	clear: both;
+	margin: 0 0 5px 0;
+	border: 1px solid #CCC;
+	padding: 10px 0;
+	background: #F1F1F1;
+	color: #444;
+	
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+.protean_preview_box{
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+.protean_preview_primary{
+	background: #000;
+}
+.protean_preview_accent{
+	background: #CCC;
+}
+#protean_font_table{
+	font-size: 2.4em;
+	padding: 10px;
+}
+#protean_font_table li{
+	border-top: 1px solid #CCC;
+	padding: 10px;
+	overflow: hidden;
+}
+#protean_font_table button{
+	float: right;
+}
+#protean_font_table li:first-child{
+	border-top:none;
+}
+#protean_font_add{
+	border-top: 1px solid #CCC;
+	padding: 10px 20px;
+	overflow: hidden;
+	background: #F5F5F5;
+}
+#protean_about_textbox{
+	margin: 10px 0 5px 18px;
+	display: none;
+	border: 1px solid #CCC;
+	float: left;
+	clear: both;
+	
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+.protean_color_holder {
+	float: left;
+	margin: 0 8px 0 0;
+}
+.protean_color_holder div{
+	width: 28px;
+	height: 28px;
+	background: url(../js/colorpicker/images/select2.png) center;
+}
+.protean_text_in_form{
+	height: 28px;
+	line-height: 28px;
+	float: left;
+	margin: 0 10px 0 5px;
+	font-size: .85em;
+}
+.protean_option_image{
+	padding: 2px 3px;
+	border: 1px solid #DDD;
+	vertical-align: middle;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+#protean_bannerwrapper{
+	width: 100%;
+	height: 350px;
+	overflow: auto;
+	border: 1px solid #CCC;
+	position: relative;
+}
+#protean_banner{
+	margin: 5px;
+	width: 875px;
+	position: relative;
+	overflow: hidden;
+}
+#protean_banner_background{	
+	width: 870px;
+	height: 280px;
+	position: relative;
+	
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	
+	background: #CCC;
+	border-style: solid;
+}
+#protean_banner_title{
+	height: 100px;
+	position: absolute;
+	top: 10px;
+	overflow: hidden;
+	border: 1px dotted #EEE;
+	
+	left: 10px;
+	width: 390px;
+}
+#protean_banner_subtitle{
+	height: 100px;
+	position: absolute;
+	top: 10px;
+	overflow: hidden;
+	
+	border: 1px dotted #EEE;
+	left: 450px;
+	width: 390px;
+	color: #444;
+}
+#protean_banner_title:after{
+    clear: both;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #fff;
+    color: #222;
+    font-size: 12px;
+    font-family: sans-serif;
+    content: "#Post title";
+}
+#protean_banner #protean_banner_title h1{
+	font-size: normal;
+	padding: 0;
+	margin: 0;
+	font-weight: normal;
+	font-size: 20px;
+	color: #444;
+}
+#protean_banner_subtitle:after{
+    clear: both;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #fff;
+    color: #222;
+    font-size: 12px;
+    font-family: sans-serif;
+    content: "#Post excerpt";
+}
+#protean_banner #protean_banner_subtitle p{
+	font-size: 14px;
+	padding: 0;
+	margin: 0;
+	font-weight: normal;
+}
+#protean-custom-fields-banner:hover{
+	min-width: 910px;
+}
+#protean_preset_name{
+	display: none;
+	float: left;
+}
+#protean_banner_button{
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	cursor: move;
+	
+	position: absolute;
+	color: #FFF;
+	display: block;
+	padding: 5px 10px;
+	border: 1px solid #FFF;
+	font-size: 12px;
+	line-height: 16px;
+	text-align: center;
+	
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+
+	background: #666666;
+	background: -moz-linear-gradient(top, #666666 0%, #333333 99%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#666666), color-stop(99%,#333333));
+	background: -webkit-linear-gradient(top, #666666 0%,#333333 99%);
+	background: -o-linear-gradient(top, #666666 0%,#333333 99%);
+	background: -ms-linear-gradient(top, #666666 0%,#333333 99%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#666666', endColorstr='#333333',GradientType=0 );
+	background: linear-gradient(top, #666666 0%,#333333 99%);
+}

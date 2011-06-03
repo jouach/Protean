@@ -1,0 +1,12 @@
+div, article, aside, footer, header, nav, section{ zoom:1 }
+body {
+   behavior: url("ie/csshover3.htc");
+}
+.box, .protean_banner, #emblematic div{
+	/* border radius */
+	behavior: url("ie/PIE.htc");
+}
+#tagscloud li{
+	/* fix stepdown */
+	display: inline;
+}
