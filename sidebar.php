@@ -18,7 +18,7 @@
 	<?php
 	$options = get_option('protean_theme_options');
 	
-	if($options['showabout']==1){ ?>
+	if(isset($options['showabout']) && $options['showabout']==1){ ?>
 	<div class="content_aside">
 		<div id="about_msg" class="box primary full">
 			<?php echo stripcslashes($options['aboutblog']); ?>

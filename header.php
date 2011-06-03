@@ -62,8 +62,9 @@
 </head>
 <?php 
 $options = get_option('protean_theme_options');
-$header = $options['header'];
-if($header=="")$header='tagline';
+
+if(!isset($options['header']) || $options['header']=="")$header='tagline';
+else $header = $options['header'];
 ?>
 <body <?php body_class(); ?>>
 	<a href="#page_main" id="skipnav"><?php _e('Skip navigation')?></a>

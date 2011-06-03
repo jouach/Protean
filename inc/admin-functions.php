@@ -3,30 +3,34 @@ function protean_font_option($selected=null){
 	$html = '';
 	$s="";
 	$options = get_option('protean_theme_options');
-	$fonts = $options['fonts'];
-	if(count($fonts)>0){
-		foreach($fonts as $f){
-			if($f==$selected)$s="selected='selected'";
-			$html .= '<option value="'.$f.'" '.$s.'>'.str_replace('+',' ',$f).'</option>';
-			$s="";
+	if(isset($options['fonts'])){
+		$fonts = $options['fonts'];
+		if(count($fonts)>0){
+			foreach($fonts as $f){
+				if($f==$selected)$s="selected='selected'";
+				$html .= '<option value="'.$f.'" '.$s.'>'.str_replace('+',' ',$f).'</option>';
+				$s="";
+			}
 		}
+		return $html;
 	}
-	return $html;
 }
 
 function protean_font_manage(){
 	$options = get_option('protean_theme_options');
-	$fonts = $options['fonts'];
-	$html = '';
-	if(count($fonts)>0){
-		foreach($fonts as $f){
-			$html .= '<li style="font-family:\''.preg_replace('/\:(.*)/','',str_replace('+',' ',$f)).'\'">'
-			.str_replace('+',' ',$f)
-			.'<input type="hidden" name="protean_theme_options[fonts][]" value="'.$f.'" />'
-			.'<button type="button" class="button-secondary font_remove">Remove</button></li>';
+	if(isset($options['fonts'])){
+		$fonts = $options['fonts'];
+		$html = '';
+		if(count($fonts)>0){
+			foreach($fonts as $f){
+				$html .= '<li style="font-family:\''.preg_replace('/\:(.*)/','',str_replace('+',' ',$f)).'\'">'
+				.str_replace('+',' ',$f)
+				.'<input type="hidden" name="protean_theme_options[fonts][]" value="'.$f.'" />'
+				.'<button type="button" class="button-secondary font_remove">Remove</button></li>';
+			}
 		}
+		return $html;
 	}
-	return $html;
 }
 
 function protean_fontsize_option($selected=null){

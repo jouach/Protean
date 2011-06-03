@@ -38,9 +38,11 @@ function theme_options_init(){
 		
 		// to include font stylesheets
 		$options = get_option('protean_theme_options');
-		$fonts = $options['fonts'];
-		foreach($fonts as $f){
-			wp_enqueue_style($f,GOOGLE_FONT_URL.$f);
+		if(isset($options['fonts'])){
+			$fonts = $options['fonts'];
+			foreach($fonts as $f){
+				wp_enqueue_style($f,GOOGLE_FONT_URL.$f);
+			}
 		}
 	}
 }
@@ -120,7 +122,7 @@ function theme_options_do_page() {
 			<h3 class="hndle"><span>Protean: font library - Powered by Google Web Fonts</span></h3>
 			<div class="inside">
 				<ul id="protean_font_table">
-					<?= protean_font_manage() ?>
+					<?php echo protean_font_manage() ?>
 				</ul>
 				<div id="protean_font_add">
 					<table class="protean_form_table" cellspacing="2" cellpadding="5">

@@ -4,10 +4,6 @@
 	require_once(TEMPLATEPATH . '/inc/theme-options.php');
 	require_once(TEMPLATEPATH . '/inc/post-options.php');
 	
-	if(!get_option('protean_preceed_old_style')){
-		require_once('inc/convert_old_style.php');
-	}
-	
 	define('GOOGLE_FONT_URL','http://fonts.googleapis.com/css?family=');
 	
 	// Add RSS links to <head> section

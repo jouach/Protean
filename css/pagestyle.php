@@ -1,6 +1,6 @@
 <?php
 header("Content-type: text/css");
-require('../../../../wp-load.php');
+require($_SERVER['DOCUMENT_ROOT'].'/wp-load.php');
 
 if(isset($_GET['id']))
 	$postid = $_GET['id'];
@@ -18,7 +18,9 @@ if(isset($postid) && $postid){
 	// not single post, use theme option style
 	$options = $fallbacks; 
 }
-if(isset($options['preset']) && ($options['preset']!='custom' && $options['preset']!='')){
+if(!isset($options['preset'])){
+	$options = $fallbacks;
+}else if(($options['preset']!='custom' && $options['preset']!='')){
 	// if use preset, get preset value
 	$preset = get_option('protean_theme_presets');
 	if(isset($preset[$options['preset']]) && is_array($preset[$options['preset']]))

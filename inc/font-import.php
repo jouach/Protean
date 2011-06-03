@@ -14,8 +14,10 @@ if ( have_posts() ){
 		
 		if(isset($options['bannersubtitle_font']))	
 			$subtitlefont = $options['bannersubtitle_font'];
-		
-		if(isset($options['preset']) && ($options['preset']!='custom' && $options['preset']!='')){
+			
+		if(!isset($options['preset'])){
+			
+		}else if(($options['preset']!='custom' && $options['preset']!='')){
 			// if use preset, get preset value
 			$preset = get_option('protean_theme_presets');
 			
@@ -27,10 +29,13 @@ if ( have_posts() ){
 			$options = $fallbacks;
 		}
 		
-		if(!isset($titlefont) || !isset($subtitlefont) || is_single()){
-			// if no value for banner title, subtitle, or is a single post. include page style font
-			if(isset($options['font']))wp_enqueue_style($options['font'],GOOGLE_FONT_URL.$options['font']);
-			else wp_enqueue_style($fallbacks['font'],GOOGLE_FONT_URL.$fallbacks['font']);
+		if(!isset($titlefont) || !$titlefont ||  !isset($subtitlefont) || !$subtitlefont || is_single()){
+			// if no value for banner title, subtitle, or is a single post. include page style font		
+			if(isset($options['font'])){
+				wp_enqueue_style($options['font'],GOOGLE_FONT_URL.$options['font']);
+			}else{
+				wp_enqueue_style($fallbacks['font'],GOOGLE_FONT_URL.$fallbacks['font']);
+			}
 		}
 		
 		// if font or subtitle was set, enqueue them
