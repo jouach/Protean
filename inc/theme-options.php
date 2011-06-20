@@ -3,18 +3,18 @@
 add_option('protean_theme_options', $original_theme_style);
 add_option('protean_theme_presets', $original_preset);
 
-add_action( 'admin_init', 'theme_options_init' );
-add_action( 'admin_menu', 'theme_options_add_page' );
+add_action( 'admin_init', 'protean_theme_options_init' );
+add_action( 'admin_menu', 'protean_theme_options_add_page' );
 
 $content_width = 580;
 
 // Load up the menu page
-function theme_options_add_page() {
-	add_theme_page( __( 'Protean Options' ), __( 'Protean Options' ), 'edit_theme_options', 'theme_options', 'theme_options_do_page' );
+function protean_theme_options_add_page() {
+	add_theme_page( __( 'Protean Options' ), __( 'Protean Options' ), 'edit_theme_options', 'theme_options', 'protean_theme_options_do_page' );
 }
 // Init plugin options to white list our options
-function theme_options_init(){
-	register_setting( 'protean_options', 'protean_theme_options', 'theme_options_validate' );
+function protean_theme_options_init(){
+	register_setting( 'protean_options', 'protean_theme_options', 'protean_theme_options_validate' );
 	if(isset($_GET['page']) && $_GET['page']=='theme_options'){
 		// for color picker
 		wp_enqueue_script('jquery-ui-core');
@@ -47,7 +47,7 @@ function theme_options_init(){
 	}
 }
 // show theme options form
-function theme_options_do_page() { 
+function protean_theme_options_do_page() { 
 	if ( ! isset( $_REQUEST['settings-updated'] ) )$_REQUEST['settings-updated'] = false;
 	wp_tiny_mce( false );
 ?>
@@ -147,7 +147,7 @@ function theme_options_do_page() {
 <?php
 }
 // validate input. Accepts an array, return an array.
-function theme_options_validate( $input ) {
+function protean_theme_options_validate( $input ) {
 	$input['aboutblog'] = wp_filter_post_kses( $input['aboutblog'] );
 	/*
 	if($_POST['protean_save_as_preset']==1)

@@ -111,7 +111,7 @@ function bannerBorder($selected=null){
 	}
 }
 
-function savePreset($params,$presetname=null){
+function protean_savePreset($params,$presetname=null){
 	if(!$presetname)$presetname='Unknow';
 	$presets = get_option('protean_theme_presets');
 	$presets[] = array(

@@ -262,6 +262,9 @@ input, textarea, button{ font-size: 16px; line-height: 1em; }
 .box.nospace{
 	margin-left: 0;
 }
+li.box{
+	list-style: none;
+}
 #tagscloud{
 	width: 595px;
 	height: 170px;
