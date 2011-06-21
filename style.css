@@ -262,7 +262,7 @@ input, textarea, button{ font-size: 16px; line-height: 1em; }
 .box.nospace{
 	margin-left: 0;
 }
-li.box{
+li.box, li.boxlink_wrap, li.boxlist{
 	list-style: none;
 }
 #tagscloud{

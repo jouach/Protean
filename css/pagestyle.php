@@ -92,7 +92,7 @@ input[type=submit]:hover,input[type=button]:hover, button:hover{
 ?>
 }
 /***** PRIMARY COLOR *****/
-.primary, .boxlink_wrap a{
+.primary{
 <?php
 	if(isset($options['primary_color']))printStyle('background: #',';',$options['primary_color']);
 	if(isset($options['primary_text']))printStyle('color: #',';',$options['primary_text']);
@@ -132,7 +132,7 @@ hr{
 ?>
 }
 /***** ACCENT COLOR *****/
-.accent{
+.accent, .boxlink_wrap a{
 <?php
 	if(isset($options['accent_color']))printStyle('background: #',';',$options['accent_color']);
 	if(isset($options['accent_text']))printStyle('color: #',';',$options['accent_text']);
