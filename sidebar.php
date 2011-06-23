@@ -1,19 +1,19 @@
 <aside id="page_sidebar">
-	<?php if ( is_active_sidebar( 'widget-area-2' ) ) : ?>
+	<?php if ( is_active_sidebar( 'widget-area-2' ) ) { ?>
 		<div class="widget-area-onethird"><?php dynamic_sidebar( 'widget-area-2' ); ?></div>
-	<?php endif; ?>
+	<?php } ?>
 	
-	<?php if ( is_active_sidebar( 'widget-area-3' ) ) : ?>
+	<?php if ( is_active_sidebar( 'widget-area-3' ) ) { ?>
 		<div class="widget-area-onethird"><?php dynamic_sidebar( 'widget-area-3' ); ?></div>
-	<?php endif; ?>
+	<?php } ?>
 	
-	<?php if ( is_active_sidebar( 'widget-area-4' ) ) : ?>
+	<?php if ( is_active_sidebar( 'widget-area-4' ) ) { ?>
 		<div class="widget-area-onethird "><?php dynamic_sidebar( 'widget-area-4' ); ?></div>
-	<?php endif; ?>
+	<?php } ?>
 	
-	<?php if ( is_active_sidebar( 'widget-area-2' ) || is_active_sidebar( 'widget-area-3' ) || is_active_sidebar( 'widget-area-4' ) ) : ?>
+	<?php if ( is_active_sidebar( 'widget-area-2' ) || is_active_sidebar( 'widget-area-3' ) || is_active_sidebar( 'widget-area-4' ) ) { ?>
 	<hr/>
-	<?php endif; ?>
+	<?php } ?>
 	
 	<?php
 	$options = get_option('protean_theme_options');

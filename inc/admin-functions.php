@@ -1,4 +1,9 @@
 <?php
+/*---
+Helper functions to use in edit post and theme options page
+---*/
+
+//Generate select option for font-family
 function protean_font_option($selected=null){
 	$html = '';
 	$s="";
@@ -16,6 +21,7 @@ function protean_font_option($selected=null){
 	}
 }
 
+//Generate font-manager table list
 function protean_font_manage(){
 	$options = get_option('protean_theme_options');
 	if(isset($options['fonts'])){
@@ -33,6 +39,7 @@ function protean_font_manage(){
 	}
 }
 
+//Generate select option for font-size
 function protean_fontsize_option($selected=null){
 	$sizes = array(9, 12, 14, 16, 18, 20, 22, 24, 26, 30, 34, 38, 42, 48, 52, 58, 62, 68, 72, 82, 92, 100, 110, 160, 200 );
 	$s="";
@@ -75,6 +82,7 @@ function textShadowOptions($selected=null){
 	}
 }
 
+//Generate select option for text-align
 function textAlign($selected=null){
 	$options = array( 
 		array('Left align','left'), 
@@ -89,6 +97,7 @@ function textAlign($selected=null){
 	}
 }
 
+//Generate select option for banner-border size
 function bannerBorder($selected=null){
 	$options = array( 
 		array('0 px','0'), 
@@ -111,6 +120,7 @@ function bannerBorder($selected=null){
 	}
 }
 
+//Save preset, not in use
 function protean_savePreset($params,$presetname=null){
 	if(!$presetname)$presetname='Unknow';
 	$presets = get_option('protean_theme_presets');

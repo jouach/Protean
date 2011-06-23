@@ -1,3 +1,8 @@
+<?php 
+/*---
+Use when edit page style for posts and theme options
+---*/ 
+?>
 <table class="protean_form_table" cellspacing="2" cellpadding="5" id="protean_page_style">
 	<tbody>
 		<tr class="form-field">

@@ -1,4 +1,8 @@
-<?php
+<?php 
+/*---
+Import fonts required into page header
+---*/ 
+
 // get theme option style
 $fallbacks = get_option( 'protean_theme_options' );
 

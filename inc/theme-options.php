@@ -1,5 +1,4 @@
 <?php
-// init fonts option, only run once
 add_option('protean_theme_options', $original_theme_style);
 add_option('protean_theme_presets', $original_preset);
 
@@ -149,10 +148,6 @@ function protean_theme_options_do_page() {
 // validate input. Accepts an array, return an array.
 function protean_theme_options_validate( $input ) {
 	$input['aboutblog'] = wp_filter_post_kses( $input['aboutblog'] );
-	/*
-	if($_POST['protean_save_as_preset']==1)
-		savePreset($_POST['protean_theme_options'],$_POST['protean_preset_name']);
-	*/
 	return $input;
 }
 ?>

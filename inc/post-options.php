@@ -4,6 +4,7 @@ add_action( 'save_post', 'protean_saveCustomFields',1,2 );
 
 function protean_create_custom_fields() {
 	global $post;
+	// only show when edit post
 	if ( $post->post_type != 'post' )return;
 	add_meta_box( 'protean-custom-fields-style', 'Protean: page',  'protean_display_custom_field_page' , 'post', 'normal', 'high' );
 	add_meta_box( 'protean-custom-fields-banner', 'Protean: banner',  'protean_display_custom_field_banner' , 'post', 'normal', 'high' );
@@ -56,4 +57,4 @@ function protean_saveCustomFields( $post_id, $post ) {
 	
 	if(isset($_POST['protean']))
 		update_post_meta( $post_id, '_protean_option', $_POST['protean']);
-}
+} // save_custom_field

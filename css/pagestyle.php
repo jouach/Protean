@@ -113,7 +113,7 @@ a.primary, .boxlink_wrap a{
 	if(isset($options['primary_text']))printStyle('color: #',';',$options['primary_text']);
 ?>
 }
-a.primary:hover,button.primary:hover,input[type="submit"].primary:hover,input[type="reset"].primary:hover,input[type="button"].primary:hover,.boxlink_wrap a:hover{
+a.primary:hover,button.primary:hover,input[type="submit"].primary:hover,input[type="reset"].primary:hover,input[type="button"].primary:hover{
 	/* FROM ACCENT */
 <?php
 	if(isset($options['accent_color']))printStyle('background: #',';',$options['accent_color']);
@@ -153,7 +153,7 @@ a.accent{
 	if(isset($options['accent_text']))printStyle('color: #',';',$options['accent_text']);
 ?>
 }
-a.accent:hover,button.accent:hover, input[type="submit"].accent:hover, input[type="reset"].accent:hover, input[type="button"].accent:hover{
+a.accent:hover,button.accent:hover, input[type="submit"].accent:hover, input[type="reset"].accent:hover, input[type="button"].accent:hover, .boxlink_wrap a:hover{
 	/* FROM PRIMARY */
 <?php
 	if(isset($options['primary_color']))printStyle('background: #',';',$options['primary_color']);

@@ -1,3 +1,8 @@
+<?php 
+/*---
+Use when edit banner for posts
+---*/ 
+?>
 <div id="protean_bannerwrapper">
 	<div id="protean_banner">
 		<div id="protean_banner_background"></div>

@@ -1,3 +1,8 @@
+<?php 
+/*---
+Display post information
+---*/ 
+?>
 <aside class="content_aside" id="post_meta">
 	<ul>
 		<li class="box primary full"><?php _e('Published:')?> <?php the_time('F jS, Y') ?> </li>

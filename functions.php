@@ -8,7 +8,7 @@
 	
 	// Add RSS links to <head> section
 	add_theme_support( 'automatic-feed-links' );
-	add_theme_support('menus');
+	add_theme_support( 'menus' );
 	
 	if ( function_exists( 'register_nav_menu' ) ) {
 		register_nav_menu( 'navigation', 'Top Navigation' );
@@ -26,6 +26,7 @@
 		remove_action('wp_head', 'rsd_link');
 		remove_action('wp_head', 'wlwmanifest_link');
     }
+    
 	add_action('init', 'removeHeadLinks');
 	remove_action('wp_head', 'wp_generator');
     
