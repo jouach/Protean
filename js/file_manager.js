@@ -13,8 +13,8 @@ jQuery(document).ready(function(){
 			if (filemanager_target) {
 				imgurl = jQuery('img',html).attr('src');
 				jQuery('#'+filemanager_target).val(imgurl);
-				if(typeof window.buildPreview == 'function' && filemanager_target == 'protean_body_image')buildPreview();
-				if(typeof window.buildBanner == 'function')buildBanner();
+				if(typeof window.protean_buildPreview == 'function' && filemanager_target == 'protean_body_image')protean_buildPreview();
+				if(typeof window.protean_buildBanner == 'function')protean_buildBanner();
 				filemanager_target = false;
 				window.send_to_editor = window.original_send_to_editor;
 				tb_remove();
@@ -24,6 +24,4 @@ jQuery(document).ready(function(){
 		}
 		return false;
 	});
-	
-	
 });

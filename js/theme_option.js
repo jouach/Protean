@@ -1,5 +1,5 @@
 jQuery(document).ready(function(){
-	showAbout(jQuery('#protean_footer_showabout'));
+	protean_showAbout(jQuery('#protean_footer_showabout'));
 
 	jQuery('.font_remove').live('click',function(e){
 		e.preventDefault();
@@ -13,7 +13,7 @@ jQuery(document).ready(function(){
 		if(jQuery('#protean_new_font').val().length>0){
 			var font = jQuery('#protean_new_font').val();
 			font = font.replace(/\s/g,'+');
-			addFont(font);
+			protean_addFont(font);
 		}else{
 			alert('Please enter font name');
 			jQuery('#protean_new_font').focus();
@@ -22,7 +22,7 @@ jQuery(document).ready(function(){
 	});
 	
 	jQuery('#protean_footer_showabout').change(function(){
-		showAbout(jQuery(this));
+		protean_showAbout(jQuery(this));
 	});
 	
 });
@@ -45,7 +45,7 @@ jQuery(window).load(function(){
 	}catch(e){}
 });
 
-function addFont(font){
+function protean_addFont(font){
 	$wrapper = jQuery('<li style="font-family:\''+font.replace(/\+/g,' ').replace(/\:(.)*/,'') +'\'">'+font.replace(/\+/g,' ').replace(/\:(.)*/,'')+'</li>');
 	$wrapper.append('<input type="hidden" name="protean_theme_options[fonts][]" value="'+font+'" />');
 	$wrapper.append('<button type="button" class="button-secondary font_remove">Remove</button>');
@@ -55,7 +55,7 @@ function addFont(font){
 	jQuery('#protean_new_font').val('');
 }
 
-function showAbout($e){
+function protean_showAbout($e){
 	if($e.attr('checked')){
 		jQuery('#protean_about_textbox').slideDown();
 	}else{

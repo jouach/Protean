@@ -1,7 +1,7 @@
 var bannerMaxWidth;
 jQuery(document).ready(function(){
-	initBanner();
-	buildBanner();
+	protean_initBanner();
+	protean_buildBanner();
 
 	jQuery('#title').keyup(function(){
 		jQuery('#protean_banner_title h1').text(jQuery(this).val());
@@ -52,17 +52,17 @@ jQuery(document).ready(function(){
 	});
 	
 	jQuery('#protean_banner_options select').change(function(){
-		buildBanner();
+		protean_buildBanner();
 	});
 	
 	jQuery('#protean_clear_bannerbgimage').click(function(e){
 		e.preventDefault();
 		jQuery('#protean_banner_bgimage').val('');
-		buildBanner();
+		protean_buildBanner();
 	});
 });
 
-function buildBanner(){
+function protean_buildBanner(){
 	bannerMaxWidth = 870-(jQuery('#protean_banner_border').val()*2);
 	jQuery('#protean_banner_background').css('background-image','url('+jQuery('#protean_banner_bgimage').val()+')');
 	jQuery('#protean_banner_background').css('background-color','#'+jQuery('#protean_banner_bgcolor input').val());
@@ -93,7 +93,7 @@ function buildBanner(){
 	});
 }
 
-function initBanner(){
+function protean_initBanner(){
 	jQuery('#protean_banner_title').css('left', jQuery('#protean_bannertitle_posx').val()+'px');
 	jQuery('#protean_banner_title').css('top', jQuery('#protean_bannertitle_posy').val()+'px');
 	jQuery('#protean_banner_title').css('width', jQuery('#protean_bannertitle_width').val()+'px');

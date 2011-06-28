@@ -1,6 +1,5 @@
 <?php
 header("Content-type: text/css");
-require($_SERVER['DOCUMENT_ROOT'].'/wp-load.php');
 
 if(isset($_GET['id']))
 	$postid = $_GET['id'];

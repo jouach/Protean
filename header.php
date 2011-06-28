@@ -38,15 +38,15 @@
 	<?php 
 	$idstr ='';
 	if(is_single()){
-		$idstr = '?id='.get_the_ID();
+		$idstr = 'id='.get_the_ID();
 	}else if ( have_posts() ) {
 		while ( have_posts() ) : the_post();
 			$postid[] = get_the_ID();
 		endwhile;// end posts loop
-		$idstr = '?ids='.implode(',',$postid);
+		$idstr = 'ids='.implode(',',$postid);
 	} ?>
 	
-	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/pagestyle.php<?php echo $idstr ?>" type="text/css" />
+	<link rel="stylesheet" href="<?php echo get_bloginfo('url'); ?>?action=protean_style&<?php echo $idstr ?>" type="text/css" />
 	
 	<?php get_template_part( 'inc/font-import') ?>
 	

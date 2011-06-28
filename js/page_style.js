@@ -1,12 +1,12 @@
 jQuery(document).ready(function(){
-	buildPreview(true);
+	protean_buildPreview(true);
 
 	jQuery('#font_options').change(function(){
-		buildPreview();
+		protean_buildPreview();
 	});
 	
 	jQuery('#fontsize_options').change(function(){
-		buildPreview();
+		protean_buildPreview();
 	});
 	
 	var thiscol;
@@ -31,8 +31,8 @@ jQuery(document).ready(function(){
 			onChange: function (hsb, hex, rgb) {
 				thiscol.children('div').css('backgroundColor', '#' + hex);
 				thiscol.children('input[type=hidden]').val(hex);
-				if(typeof window.buildPreview == 'function')buildPreview();
-				if(typeof window.buildBanner == 'function')buildBanner();
+				if(typeof window.protean_buildPreview == 'function')protean_buildPreview();
+				if(typeof window.protean_buildBanner == 'function')protean_buildBanner();
 			}
 		});
 	});
@@ -40,7 +40,7 @@ jQuery(document).ready(function(){
 	jQuery('#protean_clear_background').click(function(e){
 		e.preventDefault();
 		jQuery('#protean_body_image').val('');
-		buildPreview();
+		protean_buildPreview();
 	});
 	
 	jQuery('#protean_save_as_preset').change(function(){
@@ -78,12 +78,12 @@ jQuery(document).ready(function(){
 				jQuery(this).children('div').css('background-color','#'+jQuery(this).children('input[type=hidden]').val());
 			});
 			
-			buildPreview(true);
+			protean_buildPreview(true);
 		}
 	});
 });
 
-function buildPreview(changepreset){
+function protean_buildPreview(changepreset){
 	if(!changepreset){
 		jQuery('#protean_theme_presets option:first-child').attr('selected','selected');
 	}

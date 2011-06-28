@@ -52,7 +52,7 @@ function protean_fontsize_option($selected=null){
 }
 
 //Generate select options for line-height
-function lineHeightOptions($selected=null){
+function protean_lineHeightOptions($selected=null){
 	for($i=0;$i<=10;$i++){
 		$size = (($i+2) * 2)/10;
 		if($size==$selected)$s="selected='selected'";
@@ -63,7 +63,7 @@ function lineHeightOptions($selected=null){
 }
 
 //Generate select options for text-shadow
-function textShadowOptions($selected=null){
+function protean_textShadowOptions($selected=null){
 	$options = array( 
 		array('Blur dark','0.05em 0.05em 0.1em #222'), 
 		array('Blur light','0.05em 0.05em 0.1em #eee'),
@@ -83,7 +83,7 @@ function textShadowOptions($selected=null){
 }
 
 //Generate select option for text-align
-function textAlign($selected=null){
+function protean_textAlign($selected=null){
 	$options = array( 
 		array('Left align','left'), 
 		array('Right align','right'),
@@ -98,7 +98,7 @@ function textAlign($selected=null){
 }
 
 //Generate select option for banner-border size
-function bannerBorder($selected=null){
+function protean_bannerBorder($selected=null){
 	$options = array( 
 		array('0 px','0'), 
 		array('1 px','1'), 

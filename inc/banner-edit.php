@@ -49,7 +49,7 @@ Use when edit banner for posts
 			<th valign="middle" scope="row"><label for="link_notes"><strong><?php _e('Border:')?></strong></label></th>
 			<td>
 				<select name="<?php echo $paramname; ?>[banner_border]" id="protean_banner_border" class="fl_left" style="width:105px;margin: 0 5px 0 0;">
-					<?php echo  (isset($options['banner_border']))?bannerBorder($options['banner_border']):bannerBorder() ?>
+					<?php echo  (isset($options['banner_border']))?protean_bannerBorder($options['banner_border']):protean_bannerBorder() ?>
 				</select>
 				<span class="protean_text_in_form"> in </span>
 				<div class="protean_color_holder" id="protean_banner_bordercolor">
@@ -75,14 +75,14 @@ Use when edit banner for posts
 				</div>
 				<select name="<?php echo $paramname; ?>[bannertitle_lineheight]" id="protean_bannertitle_lineheight" class="fl_left">
 					<option value="1.5"><?php _e('Default')?></option>
-					<?php echo  (isset($options['bannertitle_lineheight']))?lineHeightOptions($options['bannertitle_lineheight']):lineHeightOptions() ?>
+					<?php echo  (isset($options['bannertitle_lineheight']))?protean_lineHeightOptions($options['bannertitle_lineheight']):protean_lineHeightOptions() ?>
 				</select>
 				<select name="<?php echo $paramname; ?>[bannertitle_shadow]" id="protean_bannertitle_shadow" class="fl_left">
 					<option value=""><?php _e('None')?></option>
-					<?php echo  (isset($options['bannertitle_shadow']))?textShadowOptions($options['bannertitle_shadow']):textShadowOptions() ?>
+					<?php echo  (isset($options['bannertitle_shadow']))?protean_textShadowOptions($options['bannertitle_shadow']):protean_textShadowOptions() ?>
 				</select>
 				<select name="<?php echo $paramname; ?>[bannertitle_align]" id="protean_bannertitle_align" class="fl_left">
-					<?php echo  (isset($options['bannertitle_align']))?textAlign($options['bannertitle_align']):textAlign() ?>
+					<?php echo  (isset($options['bannertitle_align']))?protean_textAlign($options['bannertitle_align']):protean_textAlign() ?>
 				</select>
 			</td>
 		</tr>
@@ -103,14 +103,14 @@ Use when edit banner for posts
 				</div>
 				<select name="<?php echo $paramname; ?>[bannersubtitle_lineheight]" id="protean_bannersubtitle_lineheight" class="fl_left">
 					<option value="1.5"><?php _e('Default')?></option>
-					<?php echo  (isset($options['bannersubtitle_lineheight']))?lineHeightOptions($options['bannersubtitle_lineheight']):lineHeightOptions() ?>
+					<?php echo  (isset($options['bannersubtitle_lineheight']))?protean_lineHeightOptions($options['bannersubtitle_lineheight']):protean_lineHeightOptions() ?>
 				</select>
 				<select name="<?php echo $paramname; ?>[bannersubtitle_shadow]" id="protean_bannersubtitle_shadow" class="fl_left">
 					<option value=""><?php _e('None')?></option>
-					<?php echo  (isset($options['bannersubtitle_shadow']))?textShadowOptions($options['bannersubtitle_shadow']):textShadowOptions() ?>
+					<?php echo  (isset($options['bannersubtitle_shadow']))?protean_textShadowOptions($options['bannersubtitle_shadow']):protean_textShadowOptions() ?>
 				</select>
 				<select name="<?php echo $paramname; ?>[bannersubtitle_align]" id="protean_bannersubtitle_align" class="fl_left">
-					<?php echo  (isset($options['bannersubtitle_align']))?textAlign($options['bannersubtitle_align']):textAlign() ?>
+					<?php echo  (isset($options['bannersubtitle_align']))?protean_textAlign($options['bannersubtitle_align']):protean_textAlign() ?>
 				</select>
 			</td>
 		</tr>
