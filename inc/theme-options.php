@@ -54,7 +54,7 @@ function protean_theme_options_do_page() {
 	<h2><?php screen_icon(); echo "<h2>" . get_current_theme() . __( ' Theme Options' ) . "</h2>"; ?></h2>
 	
 	<?php if ( false !== $_REQUEST['settings-updated'] ){ ?>
-		<div class="updated fade"><p><strong><?php _e( 'Options saved' ); ?></strong></p></div>
+		<div class="updated fade"><p><strong><?php _e( 'Options saved' , 'protean' ); ?></strong></p></div>
 	<?php } ?>
 	
 	<?php $options = get_option( 'protean_theme_options' ); ?>

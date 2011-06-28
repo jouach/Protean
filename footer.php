@@ -6,7 +6,7 @@
 			<a href="<?php bloginfo('comments_rss2_url'); ?>" class="box accent"><?php _e('Comments RSS')?></a>
 		</div>
 	</footer><!-- page_footer -->
-	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/protean_script.js"></script> 
+	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/protean_script.js"></script> 
 	<?php wp_footer(); ?>
 	<!-- end scripts-->
 </body> 

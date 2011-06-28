@@ -7,6 +7,10 @@ Version: 1.0
 
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
+
+Description: Protean is a Wordpress theme from Landau Reece that allows bloggers to customise their website design for individual blog posts.
+
+Tags: one-column, fixed-width, custom-background, custom-colors, theme-options
 */
 
 /****** CSS RESET ******/
@@ -149,7 +153,15 @@ input, textarea, button{ font-size: 16px; line-height: 1em; }
 	padding: 0 5px 10px;
 	clear: both;
 }
-
+.sticky{
+	/* TBD */
+}
+.bypostauthor{
+	/* TBD */
+}
+.gallery-caption{
+	/* TBD */
+}
 /****** LAYOUT ******/
 #skipnav{ 
     position:absolute;
@@ -172,7 +184,7 @@ input, textarea, button{ font-size: 16px; line-height: 1em; }
 #emblematic, #tagline{
 	float: left;
 	position: relative;
-	height: 35px;
+	min-height: 35px;
 	width: 620px;
 	overflow: hidden;
 }
@@ -207,7 +219,7 @@ input, textarea, button{ font-size: 16px; line-height: 1em; }
 	margin: 0 0 10px 0;
 	overflow: hidden;
 }
-.content_main{
+.content_main, #reply-title, .form-submit, .logged-in-as{
 	float: right;
 	width: 590px;
 	clear: right;
@@ -260,8 +272,13 @@ input, textarea, button{ font-size: 16px; line-height: 1em; }
 	-moz-border-radius: 3px;
 	border-radius: 3px;
 }
-.box.nospace{
+.box.nospace, #submit{
 	margin-left: 0;
+}
+#cancel-comment-reply-link{
+	clear: both;
+	float: left;
+	width: 100%;
 }
 li.boxlist{
 	list-style: none;

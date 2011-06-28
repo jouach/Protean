@@ -46,7 +46,7 @@
 		$idstr = 'ids='.implode(',',$postid);
 	} ?>
 	
-	<link rel="stylesheet" href="<?php echo get_bloginfo('url'); ?>?action=protean_style&<?php echo $idstr ?>" type="text/css" />
+	<link rel="stylesheet" href="<?php echo home_url() ?>?action=protean_style&<?php echo $idstr ?>" type="text/css" />
 	
 	<?php get_template_part( 'inc/font-import') ?>
 	
@@ -55,10 +55,10 @@
 	<!--[if lt IE 9]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
-		<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/ie.css" type="text/css" />
+		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/ie.css" type="text/css" />
 	<![endif]-->
 	
-	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/print.css" type="text/css" media="print" />
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/css/print.css" type="text/css" media="print" />
 </head>
 <?php 
 $options = get_option('protean_theme_options');

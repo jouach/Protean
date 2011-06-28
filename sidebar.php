@@ -39,7 +39,7 @@
 			    
 			    foreach($tags as $t){ ?>
 			    	<li><a href="<?php echo get_tag_link($t->term_id); ?>" class="box accent"><?php echo $t->name; ?></a></li>
-			<? } ?>
+			<?php } ?>
 		</ul></nav>
 	</div>
 	<hr/>

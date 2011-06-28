@@ -35,62 +35,40 @@ if ( post_password_required() ) { ?>
 <?php endif; ?>
 
 <?php if ( comments_open() ) : ?>
-	<div id="respond">
-		<div class="content_main content_narrow">
-			<h3 class="comment_head"><?php comment_form_title( 'Post a comment', 'Leave a Reply to %s' ); ?></h3>
-			<?php cancel_comment_reply_link('<p>Click here to cancel reply.</p>'); ?>
-			<p><?php _e('Your email is')?> <em><?php _e('never')?></em> <?php _e('published nor shared. Required fields are marked')?> <span class="required">*</span></p>
-		</div>
-	
-		<?php if ( get_option('comment_registration') && !is_user_logged_in() ) : ?>
-			<p class="center"><?php _e('You must be')?> <a href="<?php echo wp_login_url( get_permalink() ); ?>"><?php _e('logged in')?></a> <?php _e('to post a comment.')?></p>
-		<?php else : ?>
-		
-		<form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
-		<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/jquery.validate.min.js"></script> 
-		<ul>
-			<?php if ( is_user_logged_in() ) : ?>
-				<li>
-					<div class="content_main">
-						<p><a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php _e('Logged in as')?>  <?php echo $user_identity; ?></a>. 
-						<a href="<?php echo wp_logout_url(get_permalink()); ?>" title="Log out of this account">Log out &raquo;</a></p>
-					</div>
-				</li>
-			<?php else : ?>
-	
-				<li>
-					<div class="content_main">
-					<input type="text" name="author" id="author" class="box accent nospace full <?php if ($req) echo "required"; ?>" value="<?php echo esc_attr($comment_author); ?>" size="22" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> /></div>
-					<div class="content_aside"><label for="author" class="box primary fl_right"><?php _e('Name')?> <?php if ($req) echo "*"; ?></label></div>
-				</li>
-	
-				<li>
-					<div class="content_main"><input type="text" class="box accent nospace full <?php if ($req) echo "required email"; ?>" name="email" id="email" value="<?php echo esc_attr($comment_author_email); ?>" size="22" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> /></div>
-					<div class="content_aside"><label for="email" class="box primary fl_right"><?php _e('Email')?> <?php if ($req) echo "*"; ?></label></div>
-				</li>
-	
-				<li>
-					<div class="content_main"><input type="text" class="box accent nospace full" name="url" id="url" value="<?php echo esc_attr($comment_author_url); ?>" size="22" tabindex="3" /></div>
-					<div class="content_aside"><label for="url" class="box primary fl_right"><?php _e('Website')?></label></div>
-				</li>
-	
-			<?php endif; ?>
-	
-			<li>
-				<div class="content_main"><textarea name="comment" class="box accent nospace full required" id="comment" cols="58" rows="10" tabindex="4"></textarea></div>
-				<div class="content_aside"><label for="comment" class="box primary fl_right"><?php _e('Comment')?> *</label></div>
-			</li>
-	
-			<li>
-				<div class="content_main"><input name="submit" type="submit" id="submit" class="box accent nospace" tabindex="5" value="Submit Comment" />
-				<?php comment_id_fields(); ?></div>
-			</li>
-			
-			<?php do_action('comment_form', $post->ID); ?>
-		</ul>
-		</form>
-		<?php endif; // If registration required and not logged in ?>
-	</div>
+	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.validate.min.js"></script>
+	<?php
+		$defaults = 
+		array(
+			'comment_notes_before'	=> '<p class="content_main content_narrow">' . __( 'Your email address is <em>never</em> published nor shared.' ) . ( $req ? '*' : '' ) . '</p>',
+			'comment_notes_after'	=> '',
+			'fields'				=> array(
+											'author' => '<div>
+															<div class="content_main">
+																<input type="text" name="author" id="author" class="box accent nospace full ' 
+																. (($req) ? "required" : "" ) . '" value="'. esc_attr($comment_author).
+																'" size="22" tabindex="1" ' . (($req) ? "aria-required='true'" : "" ) . '/>
+															</div>
+															<div class="content_aside"><label for="author" class="box primary fl_right">'. __('Name') . ( $req ? "*" : "" ) . '</label></div>
+														</div>',
+											'email'  => '<div>
+															<div class="content_main"><input type="text" class="box accent nospace full '
+															.  ( $req ? "required email" : '' ) . '" name="email" id="email" value="' 
+															.  esc_attr($comment_author_email) . '" size="22" tabindex="2" '. ( $req ? "aria-required='true'" : "" ) .' /></div>
+															<div class="content_aside"><label for="email" class="box primary fl_right">'. __('Email') . ( $req ? "*" : "" ) .'</label></div>
+														</div>',
+											'url'    => '<div>
+															<div class="content_main"><input type="text" class="box accent nospace full" name="url" id="url" value="'
+															. esc_attr($comment_author_url) .'" size="22" tabindex="3" /></div>
+															<div class="content_aside"><label for="url" class="box primary fl_right">'. __('Website') .'</label></div>
+														</div>'
+										),
+			'comment_field'			=> '<div>
+											<div class="content_main"><textarea name="comment" class="box accent nospace full required" id="comment" cols="58" rows="10" tabindex="4"></textarea></div>
+											<div class="content_aside"><label for="comment" class="box primary fl_right">'. __('Comment') .' *</label></div>
+										</div>'
+		);
+		?>
+	<?php comment_form($defaults) ?>	
 <?php else : // comments are closed ?>
 	<p class="center"><i><?php _e('Comment closed for this post.')?></i></p>
 <?php endif; ?>
