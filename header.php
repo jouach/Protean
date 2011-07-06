@@ -3,26 +3,34 @@
 <head>
 	<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 	
-	<title>
-	<?php
+	<title><?php
 		if (function_exists('is_tag') && is_tag()) {
-		 single_tag_title("Tag Archive for &quot;"); echo '&quot; - '; }
-		elseif (is_archive()) {
-		 wp_title(''); echo ' Archive - '; }
-		elseif (is_search()) {
-		 echo 'Search for &quot;'.esc_html($s).'&quot; - '; }
-		elseif (!(is_404()) && (is_single()) || (is_page())) {
-		 wp_title(''); echo ' - '; }
-		elseif (is_404()) {
-		 echo 'Not Found - '; }
+			single_tag_title(__("Tag Archive for &quot;",'protean')); 
+			echo '&quot; - '; 
+		}else if (is_archive()) {
+			wp_title('');  
+			_e(' Archive - ','protean'); 
+		}else if (is_search()) {
+			_e('Search for &quot;','protean');
+			echo esc_html($s).'&quot; - '; 
+		}else if (!(is_404()) && (is_single()) || (is_page())) {
+			wp_title(''); 
+			echo ' - '; 
+		}else if (is_404()) {
+			_e('Not Found - ','protean');
+		}
+		
 		if (is_home()) {
-		 bloginfo('name'); echo ' - '; bloginfo('description'); }
-		else {
-		  bloginfo('name'); }
+			bloginfo('name'); echo ' - '; bloginfo('description'); 
+		}else {
+			bloginfo('name'); 
+		}
 		if ($paged>1) {
-		 echo ' - page '. $paged; }
-	?>
-	</title> 
+			_e(' - page ','protean'); 
+			echo $paged; 
+		}
+	?></title> 
+	
 	<?php if (is_search()) { ?>
 	   <meta name="robots" content="noindex, nofollow" /> 
 	<?php } ?>
@@ -46,11 +54,9 @@
 		$idstr = 'ids='.implode(',',$postid);
 	} ?>
 	
-	<link rel="stylesheet" href="<?php echo home_url() ?>?action=protean_style&<?php echo $idstr ?>" type="text/css" />
+	<link rel="stylesheet" href="<?php echo home_url() ?>?action=protean_style&amp;<?php echo $idstr ?>" type="text/css" />
 	
 	<?php get_template_part( 'inc/font-import') ?>
-	
-	<?php wp_head(); ?>
 	
 	<!--[if lt IE 9]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -59,6 +65,8 @@
 	<![endif]-->
 	
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/css/print.css" type="text/css" media="print" />
+	
+	<?php wp_head(); ?>
 </head>
 <?php 
 $options = get_option('protean_theme_options');
@@ -67,7 +75,7 @@ if(!isset($options['header']) || $options['header']=="")$header='tagline';
 else $header = $options['header'];
 ?>
 <body <?php body_class(); ?>>
-	<a href="#page_main" id="skipnav"><?php _e('Skip navigation')?></a>
+	<a href="#page_main" id="skipnav"><?php _e('Skip navigation','protean')?></a>
 	<header id="page_header">
 		<?php get_template_part( 'inc/headlines/'.$header ); ?>
 		<?php get_search_form(); ?>

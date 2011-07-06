@@ -25,7 +25,7 @@
 		</div>
 	</div>
 	<div id="tagscloud" class="content_main">
-		<p class="box primary"><?php _e('Popular Tags')?></p>
+		<p class="box primary"><?php _e('Popular Tags','protean')?></p>
 		
 		<nav><ul>
 			<?php 

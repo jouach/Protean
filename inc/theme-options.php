@@ -9,7 +9,7 @@ $content_width = 580;
 
 // Load up the menu page
 function protean_theme_options_add_page() {
-	add_theme_page( __( 'Protean Options' ), __( 'Protean Options' ), 'edit_theme_options', 'theme_options', 'protean_theme_options_do_page' );
+	add_theme_page( __( 'Protean Options','protean' ), __( 'Protean Options','protean' ), 'edit_theme_options', 'theme_options', 'protean_theme_options_do_page' );
 }
 // Init plugin options to white list our options
 function protean_theme_options_init(){
@@ -51,7 +51,7 @@ function protean_theme_options_do_page() {
 	wp_tiny_mce( false );
 ?>
 <div class="wrap">
-	<h2><?php screen_icon(); echo "<h2>" . get_current_theme() . __( ' Theme Options' ) . "</h2>"; ?></h2>
+	<h2><?php screen_icon(); echo "<h2>" . get_current_theme() . __( ' Theme Options','protean' ) . "</h2>"; ?></h2>
 	
 	<?php if ( false !== $_REQUEST['settings-updated'] ){ ?>
 		<div class="updated fade"><p><strong><?php _e( 'Options saved' , 'protean' ); ?></strong></p></div>
@@ -76,10 +76,12 @@ function protean_theme_options_do_page() {
 						<tr>
 							<th valign="top" scope="row"><label for="link_image"><strong>Header:</label></th>
 							<td>
-								<input type="radio" name="protean_theme_options[header]" value="tagline" id="header_tagline" <?php if(isset($options['header']) &&  $options['header']=='tagline')echo 'checked="checked"' ?> /> 
+								<input type="radio" name="protean_theme_options[header]" value="tagline" id="header_tagline" 
+								<?php if(isset($options['header']))checked($options['header'],'tagline'); ?> /> 
 								<label for="header_tagline"><img src="<?php echo get_template_directory_uri() ?>/images/text.gif" alt="text" class="protean_option_image"  /> 
 								Site title and tagline (see <a href="/wp-admin/options-general.php">General Settings</a>)</label>
-								<p><input type="radio" name="protean_theme_options[header]" value="emblem" id="header_emblem" <?php if(isset($options['header']) &&  $options['header']=='emblem')echo 'checked="checked"' ?> /> 
+								<p><input type="radio" name="protean_theme_options[header]" value="emblem" id="header_emblem" 
+								<?php if(isset($options['header']))checked($options['header'],'emblem'); ?> /> 
 								<label for="header_emblem"><img src="<?php echo get_template_directory_uri() ?>/images/emble.gif" alt="emble" class="protean_option_image"  /> 
 								Emblematic</label></p>
 							</td>
@@ -93,7 +95,7 @@ function protean_theme_options_do_page() {
 								<div>
 								<input type="hidden" name="protean_theme_options[showabout]" value="0" />
 								<input type="checkbox" name="protean_theme_options[showabout]" id="protean_footer_showabout" 
-								<?php if(isset($options['showabout']) && $options['showabout']=='1')echo 'checked="checked"' ?> value="1" />
+								<?php if(isset($options['showabout']))checked($options['showabout'],1); ?> value="1" />
 								<label for="protean_footer_showabout"> Enable Protean footer with About message:</label>
 								</div>
 								<div id="protean_about_textbox">
@@ -107,9 +109,11 @@ function protean_theme_options_do_page() {
 						<tr>
 							<th valign="top" scope="row"><label for="link_image"><strong>Top Menu:</label></th>
 							<td>
-								<input type="radio" id="enable_menu" name="protean_theme_options[menu]" value="1" <?php if(isset($options['menu']) &&  $options['menu']=='1')echo 'checked="checked"' ?> /> 
+								<input type="radio" id="enable_menu" name="protean_theme_options[menu]" value="1" 
+								<?php if(isset($options['menu']))checked($options['menu'],1); ?> /> 
 								<label for="enable_menu"> Show menu</label>
-								<input type="radio" id="disable_menu" name="protean_theme_options[menu]" value="0" <?php if(!isset($options['menu']) ||   $options['menu']=='0')echo 'checked="checked"' ?> /> 
+								<input type="radio" id="disable_menu" name="protean_theme_options[menu]" value="0" 
+								<?php if(!isset($options['menu']) ||   $options['menu']=='0')echo 'checked="checked"' ?> /> 
 								<label for="disable_menu"> Hide menu</label>
 							</td>
 						</tr>
@@ -144,10 +148,40 @@ function protean_theme_options_do_page() {
 	</form>
 </div>
 <?php
+//print_r($options);
 }
 // validate input. Accepts an array, return an array.
 function protean_theme_options_validate( $input ) {
-	$input['aboutblog'] = wp_filter_post_kses( $input['aboutblog'] );
+
+	$input['font'] 			= esc_attr( $input['font'] );
+	$input['fontsize'] 		= esc_attr( $input['fontsize'] );
+	$input['color'] 		= esc_attr( $input['color'] );
+	$input['text'] 			= esc_attr( $input['text'] );
+	$input['link'] 			= esc_attr( $input['link'] );
+	$input['hover'] 		= esc_attr( $input['hover'] );
+	$input['primary_color'] = esc_attr( $input['primary_color'] );
+	$input['primary_text'] 	= esc_attr( $input['primary_text'] );
+	$input['primary_link'] 	= esc_attr( $input['primary_link'] );
+	$input['primary_hover'] = esc_attr( $input['primary_hover'] );
+	$input['accent_color'] 	= esc_attr( $input['accent_color'] );
+	$input['accent_text'] 	= esc_attr( $input['accent_text'] );
+	$input['accent_link'] 	= esc_attr( $input['accent_link'] );
+	$input['accent_hover'] 	= esc_attr( $input['accent_hover'] );
+	$input['accent_color'] 	= esc_attr( $input['accent_color'] );
+	$input['accent_text'] 	= esc_attr( $input['accent_text'] );
+	$input['accent_link'] 	= esc_attr( $input['accent_link'] );
+	$input['accent_hover'] 	= esc_attr( $input['accent_hover'] );
+	$input['bgimage'] 		= esc_url( $input['bgimage'] );
+	$input['preset'] 		= esc_attr( $input['preset'] );
+	$input['header'] 		= esc_attr( $input['header'] );
+	$input['showabout'] 	= esc_attr( $input['showabout'] );
+	$input['aboutblog'] 	= wp_kses_post( $input['aboutblog'] );
+	$input['menu'] 			= esc_attr( $input['menu'] );
+	
+	foreach($input['fonts'] as $f){
+		$fonts[] = esc_attr($f);
+	}
+	$input['fonts'] = $fonts;
 	return $input;
 }
 ?>

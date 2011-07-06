@@ -6,7 +6,7 @@ Use when edit page style for posts and theme options
 <table class="protean_form_table" cellspacing="2" cellpadding="5" id="protean_page_style">
 	<tbody>
 		<tr class="form-field">
-			<th valign="middle" scope="row"><label for="link_image"><strong><?php _e('Font:')?></label></th>
+			<th valign="middle" scope="row"><label for="link_image"><strong><?php _e('Font:','protean')?></label></th>
 			<td>
 				<select name="<?php echo $paramname; ?>[font]" id="font_options" class="fl_left">
 					<?php echo  (isset($options['font']))?protean_font_option($options['font']):protean_font_option() ?>
@@ -14,7 +14,7 @@ Use when edit page style for posts and theme options
 				<select name="<?php echo $paramname; ?>[fontsize]" id="fontsize_options"  class="fl_left">
 					<?php echo  (isset($options['fontsize']))?protean_fontsize_option($options['fontsize']):protean_fontsize_option() ?>
 				</select>
-				<span class="protean_text_in_form" id="protean_example_text"> <?php _e('Example Text')?></span>
+				<span class="protean_text_in_form" id="protean_example_text"> <?php _e('Example Text','protean')?></span>
 			</td>
 			<td rowspan="6" width="220">
 				<div class="protean_preview" id="preview_crib">
@@ -32,16 +32,16 @@ Use when edit page style for posts and theme options
 					<div class="protean_preview_left protean_preview_box protean_preview_primary">ABOUT</div>
 					<div class="protean_preview_right protean_preview_box protean_preview_accent">TAGS CLOUD</div>
 				</div>
-				<p class="fl_right clear"><small><?php _e('Example only. Not to scale.')?></small></p>
+				<p class="fl_right clear"><small><?php _e('Example only. Not to scale.','protean')?></small></p>
 			</td>
 		</tr>
 		<tr class="form-field">
-			<th valign="middle" scope="row"><label for="rss_uri"><strong><?php _e('Body:')?></strong></label></th>
+			<th valign="middle" scope="row"><label for="rss_uri"><strong><?php _e('Body:','protean')?></strong></label></th>
 			<td>
 				<div class="protean_color_holder" id="protean_body_color"><div style="background-color:#<?php echo (isset($options['color']))?$options['color']:'' ?>"></div>
 				<input type="hidden" name="<?php echo $paramname; ?>[color]" value="<?php echo (isset($options['color']))?$options['color']:'' ?>" />
 				</div>
-				<span class="protean_text_in_form"><?php _e('with')?></span>
+				<span class="protean_text_in_form"><?php _e('with','protean')?></span>
 				<div class="protean_color_holder" id="protean_body_text"><div style="background-color:#<?php echo (isset($options['text']))?$options['text']:'' ?>"></div>
 				<input type="hidden" name="<?php echo $paramname; ?>[text]" value="<?php echo (isset($options['text']))?$options['text']:'' ?>" />
 				</div>
@@ -97,16 +97,9 @@ Use when edit page style for posts and theme options
 			<td>
 				<input id="protean_body_image" type="hidden" name="<?php echo $paramname; ?>[bgimage]" value="<?php echo (isset($options['bgimage']))?$options['bgimage']:'' ?>" />
 				<button rel="protean_body_image" type="button" class="pretean_open_filemanager button-secondary fl_left">Choose image</button> 
-				<span class="protean_text_in_form">(overrides body color) - <a href="#" id="protean_clear_background">Clear Background Image</a></span>
+				<span class="protean_text_in_form">(<?php _e('overrides body color','protean')?>) - <a href="#" id="protean_clear_background"><?php _e('Clear Background Image','protean')?></a></span>
 			</td>
 		</tr>
-		<!--tr>
-			<th valign="middle" scope="row"><label for="link_notes"><strong></strong></label></th>
-			<td>
-				<span class="protean_text_in_form"><input type="checkbox" name="protean_save_as_preset" value="1" id="protean_save_as_preset" /> <label for="protean_save_as_preset">Save as Preset</label></span>
-				<div id="protean_preset_name"><input type="text" name="protean_preset_name" placeholder="Preset name" /></div>
-			</td>
-		</tr-->
 		<tr>
 			<td colspan="2" style="padding: 0 5px;"><hr/></td>
 		</tr>

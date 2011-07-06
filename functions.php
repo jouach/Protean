@@ -24,12 +24,12 @@ if ( !is_admin() ) {
 }
 
 // Clean up the <head>
-function removeHeadLinks() {
+function protean_removeHeadLinks() {
 	remove_action('wp_head', 'rsd_link');
 	remove_action('wp_head', 'wlwmanifest_link');
 }
 
-add_action('init', 'removeHeadLinks');
+add_action('init', 'protean_removeHeadLinks');
 remove_action('wp_head', 'wp_generator');
 
 if (function_exists('register_sidebar')) {

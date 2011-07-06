@@ -51,10 +51,11 @@ function protean_display_custom_field_banner(){
 
 function protean_saveCustomFields( $post_id, $post ) {
 	if ( $post->post_type != 'post' )return;
-		
-	if(isset($_POST['protean_save_as_preset']) && $_POST['protean_save_as_preset']==1)
-		savePreset($_POST['protean'],$_POST['protean_preset_name']);
 	
-	if(isset($_POST['protean']))
-		update_post_meta( $post_id, '_protean_option', $_POST['protean']);
+	if(isset($_POST['protean'])){
+		foreach($_POST['protean'] as $k=>$opt){
+			$options[$k] = esc_attr($opt);
+		}
+		update_post_meta( $post_id, '_protean_option', $options);
+	}
 } // save_custom_field

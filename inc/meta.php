@@ -5,12 +5,12 @@ Display post information
 ?>
 <aside class="content_aside" id="post_meta">
 	<ul>
-		<li class="box primary full"><?php _e('Published:')?> <?php the_time('F jS, Y') ?> </li>
-		<li class="box primary full"><?php _e('Author:')?> <?php the_author_posts_link() ?></li>
-		<li class="box primary full"><?php _e('Category:')?> <?php foreach((get_the_category()) as $category) { ?>
+		<li class="box primary full"><?php _e('Published:','protean')?> <?php the_time('F jS, Y') ?> </li>
+		<li class="box primary full"><?php _e('Author:','protean')?> <?php the_author_posts_link() ?></li>
+		<li class="box primary full"><?php _e('Category:','protean')?> <?php foreach((get_the_category()) as $category) { ?>
 			<a href="<?php echo get_category_link($category->term_id); ?>"><?php esc_attr_e($category->cat_name); ?></a> 
 		<?php } // end category loop ?></li>
-		<li class="box primary full"><?php _e('Discussion:')?> <a href="#comments"><?php comments_number('0', '1', '%'); ?> <?php _e('Comments')?></a></li>
+		<li class="box primary full"><?php _e('Discussion:','protean')?> <a href="#comments"><?php comments_number('0', '1', '%'); ?> <?php _e('Comments','protean')?></a></li>
 	</ul>
 	<ul id="post_tags">
 	<?php

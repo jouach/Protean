@@ -57,9 +57,9 @@ blockquote {
 	if(isset($options['primary_color']))printStyle('border-left: 2px solid #',';',$options['primary_color']);
 ?>
 }
-td, th{ 
+td,th { 
 <?php
-	if(isset($options['primary_text']))printStyle('border: 1px solid #',';',$options['primary_text']);
+	if(isset($options['accent_color']))printStyle('border: 1px solid #',';',$options['accent_color']);
 ?>
 }
 input[type=text],input[type=password],input[type=submit],input[type=button], button

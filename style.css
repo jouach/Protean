@@ -162,6 +162,10 @@ input, textarea, button{ font-size: 16px; line-height: 1em; }
 .gallery-caption{
 	/* TBD */
 }
+.page-link{
+	clear: both;
+	padding: 10px 0;
+}
 /****** LAYOUT ******/
 #skipnav{ 
     position:absolute;
@@ -527,7 +531,8 @@ span.widget_title, .widget ul li{
 	top: 0;
 	left: 169px;
 }
-#topnav li:hover ul{
+
+#topnav li:hover > ul{
 	display: block;
 }
 #topnav li a{
