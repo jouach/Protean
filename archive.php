@@ -26,7 +26,10 @@
 		<?php } ?>
 		</div><!-- full_content -->
 
-	<?php get_template_part( 'loop' ); ?>
+	<?php 
+		rewind_posts();
+		get_template_part( 'loop' ); 
+	?>
 	</div><!-- page_main -->
 <hr/>
 
