@@ -554,16 +554,20 @@ span.widget_title, .widget ul li{
 
 /****** SEARCH BOX ******/
 #site_search{
-	padding: 0px;
 	height: 35px;
 	width: 247px;
 	line-height: 16px;
+	padding: 0;
+}
+#searchform{
+	padding: 0 0 0 10px;
+	display: block;
 }
 #search_text{
 	border: 0;
 	background: inherit;
 	min-height: 35px;
-	padding: 0 10px;
+	padding: 0 10px 0 0;
 	outline: none;
 	margin: 0;
 	width: 185px;
