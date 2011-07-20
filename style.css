@@ -506,6 +506,8 @@ span.widget_title, .widget ul li{
 /****** TOP NAVIGATION *****/
 #topnav{
 	margin: 0 5px 15px;
+	
+	position: relative;
 }
 #topnav li{
 	list-style: none;

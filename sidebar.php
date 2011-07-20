@@ -25,9 +25,8 @@
 		</div>
 	</div>
 	<div id="tagscloud" class="content_main">
-		<p class="box primary"><?php _e('Popular Tags','protean')?></p>
-		
-		<nav><ul>
+		<nav>
+		<p class="box primary"><?php _e('Popular Tags','protean')?></p><ul>
 			<?php 
 				$args = array(
 			    'number'    => 26,

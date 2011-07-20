@@ -44,7 +44,7 @@ if ( post_password_required() ) { ?>
 			'comment_notes_after'	=> '',
 			'fields'				=> 
 				array(
-				'author' => '<div>
+				'author' => '<div class="clr">
 								<div class="content_main">
 									<input type="text" name="author" id="author" class="box accent nospace full ' 
 									. (($req) ? "required" : "" ) . '" value="'. esc_attr($comment_author).

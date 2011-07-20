@@ -2,7 +2,7 @@ div, article, aside, footer, header, nav, section{ zoom:1 }
 body {
    behavior: url("ie/csshover3.htc");
 }
-.box, .boxlink_wrap a, .protean_banner, #topnav li a, #emblematic div{
+.box, .boxlink_wrap a, .protean_banner, #topnav li a, #emblematic div, input[type="text"], input[type="password"], input[type="submit"], input[type="button"], button{
 	/* border radius */
 	behavior: url("ie/PIE.htc");
 }
